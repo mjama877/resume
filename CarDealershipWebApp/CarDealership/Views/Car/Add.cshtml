@@ -1,0 +1,57 @@
+﻿@model CarDealership.Models.Car
+<body style="background-color:indianred">
+    @{
+        ViewBag.Title = "Add";
+    }
+
+
+    <h3>@ViewBag.Message</h3>
+
+
+
+    @using (Html.BeginForm("Add", "Car"))
+    {
+        <div class=" form-group">
+            <label>Make</label><br />
+            @Html.TextBoxFor(x => x.Make, new { placeholder = "Who makes this car?" })
+            @Html.ValidationMessageFor(x => x.Make)
+        </div>
+        <div class=" form-group">
+            <label>Model</label><br />
+            @Html.TextBoxFor(x => x.Model, new { placeholder = "Car Model?" })
+            @Html.ValidationMessageFor(x => x.Model)
+        </div>
+        <div class=" form-group">
+            <label>Year</label><br />
+            @Html.TextBoxFor(x => x.Year, new { placeholder = "Year?" })
+            @Html.ValidationMessageFor(x => x.Year)
+        </div>
+        <div class=" form-group">
+            <label>Price</label><br />
+            @Html.TextBoxFor(x => x.Price, new { placeholder = "Car Price?" })
+            @Html.ValidationMessageFor(x => x.Price)
+        </div>
+            <div class=" form-group">
+                <label>Description</label><br />
+                @Html.TextBoxFor(x => x.Description, new { placeholder = "Car description?" })
+                @Html.ValidationMessageFor(x => x.Description)
+            </div>
+                <div class=" form-group">
+                    <label>Title</label><br />
+                    @Html.TextBoxFor(x => x.Title, new { placeholder = "Car TITLE?" })
+                    @Html.ValidationMessageFor(x => x.Title)
+                </div>
+
+                <div class=" form-group">
+                    <label>ImageURL</label><br />
+                    @Html.TextBoxFor(x => x.ImageUrl, new { placeholder = "Car Picture?" })
+                    @Html.ValidationMessageFor(x => x.ImageUrl)
+                </div>
+
+                <button>Submit</button>
+
+
+
+    }
+    </body>
+

@@ -1,0 +1,28 @@
+﻿@model CarDealership.Models.Car
+@{
+    ViewBag.Title = "Details";
+}
+@* we need more details!!!
+ *@
+
+
+
+<h1 style="background-color:royalblue"> Vehicle details  </h1>
+
+<body style="background-color:indianred">
+ <div class="col-xs-4">
+    <ul>
+        <li>@Model.Year  </li>
+        <li>@Model.Make  </li>
+        <li>@Model.Model  </li>
+        <li>@Model.Description  </li>
+        <li>@String.Format("{0:C}", Model.Price) </li>
+      </ul>
+     <button type="button" class="btn btn-info btn-lg">@Html.ActionLink("Inquire about this car", "Contact", "Home")</button>
+    </div>
+
+    <div class="col-xs-8">
+        <img src=@Model.ImageUrl>
+        </div>
+</body>
+
