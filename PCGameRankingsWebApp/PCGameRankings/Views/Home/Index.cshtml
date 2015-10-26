@@ -1,0 +1,43 @@
+﻿@model List<PCGameRankings.Models.PCGames>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>GAME RANKINGS</h1>
+    <p class="lead">We Rank the biggest PC Games of the year!</p>
+   
+    <div id="slider">
+        <figure>
+            <img src="http://static3.gamespot.com/uploads/original/1365/13658182/2885935-star_wars_battlefront_e3_screen_5_weapon_variety_wm.jpg" alt="">
+            <img src="http://i.ytimg.com/vi/XW7Of3g2JME/maxresdefault.jpg" alt="">
+            <img src="http://attackofthefanboy.com/wp-content/uploads/2015/08/devastation-trans.jpg" alt="">
+            <img src="http://i.ytimg.com/vi/smFJaRWwvRs/maxresdefault.jpg" alt="">
+            <img src="http://i.ytimg.com/vi/FuENw3W2eBU/maxresdefault.jpg" alt="">
+        </figure>
+    </div>
+    <button type="button" class="btn btn-info btn-lg">@Html.ActionLink("Get the Rankings", "GameRankings", "Home")</button>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Fallout 4</h2>
+        <p>
+            Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4
+            Fallout 4 is an upcoming action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Transformers Devastation</h2>
+        <p>Transformers: Devastation is a third-person action-brawler game with a breathtaking comic book-inspired visual style.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Star Wars Battlefront</h2>
+        <p>Star Wars Battlefront is an upcoming action first- and third-person shooter video game based on the Star Wars franchise.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

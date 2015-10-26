@@ -1,0 +1,126 @@
+﻿@model List<PCGameRankings.Models.PCGames>
+@{
+    ViewBag.Title = "GameRankings";
+}
+ 
+
+<h2>GameRankings</h2>
+<div class="wrap">
+    <button type="button" id="rankings" class="btn btn-info btn-lg">Rankings</button>
+    <button type="button" id="releaseDate" class="btn btn-info btn-lg">Release Dates </button>
+    <button type="button" id="alpha" class="btn btn-info btn-lg">Alphabetically </button>
+    <button type="button" onclick="myFunction()" class="btn btn-info btn-lg">Get Game List</button>
+    <div id="container">
+        <div class="jumbotron">
+            @foreach (var game in Model)
+            {
+                <div>
+                    <div class="box">
+
+                        <img src="@game.ImageURL" class="title-image">
+                        <h1> rank score @game.Rank</h1>
+                        <h2> Release Date: @game.ReleaseDate.ToShortDateString()</h2>
+                        <h3 style="text-shadow:3px 0px 8px rgba(255,255,0,0.5);font-weight:normal;color:#000000;background-color:#3FC4D9;border: 12px solid #19CFC8;letter-spacing:-2pt;word-spacing:5pt; font-family:impact, sans-serif;line-height:1;">   @game.GameTitle</h3>
+                    </div>
+                </div>
+            }
+            @*<div>
+                <div class="box">
+
+                    <img src="http://static3.gamespot.com/uploads/original/1365/13658182/2885935-star_wars_battlefront_e3_screen_5_weapon_variety_wm.jpg" class="title-image">
+                    <h1> rank score 8.5</h1>
+                    <h2> Release Date: 11/05</h2>
+                </div>
+            </div>
+            <div >
+                <div class="box">
+
+                    <img src="http://attackofthefanboy.com/wp-content/uploads/2015/08/devastation-trans.jpg" class="title-image">
+                    <h1>  rank score 8</h1>
+                    <h2> Release Date: 10/30</h2>
+                </div>
+            </div>
+            <div >
+                <div class="box">
+
+                    <img src="http://i.ytimg.com/vi/smFJaRWwvRs/maxresdefault.jpg" class="title-image">
+                    <h1> rank score 8.7</h1>
+                    <h2> Release Date: 11/22</h2>
+                </div>
+            </div>
+            <div >
+                <div class="box">
+
+                    <img src="http://i.ytimg.com/vi/FuENw3W2eBU/maxresdefault.jpg" class="title-image">
+                    <h1> rank score 8.2</h1>
+                    <h2> Release Date: 11/11</h2>
+                </div>
+            </div>
+            <div >
+                <div class="box">
+
+                    <img src="http://www.twinfinite.net/wp-content/uploads/2014/11/FarCry4_Banner_HD-620x350.jpg" class="title-image">
+                    <h1> rank score 8.5</h1>
+                    <h2> Release Date: 12/05</h2>
+                </div>
+            </div>
+            <div >
+        
+             
+            </div>*@
+        </div>
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+function myFunction() {
+    var div = document.getElementById("jumbotron");
+    var images = document.getElementsByClassName("title-image");
+    alert(images.length);
+}
+</script>
+<script>
+var $divs = $("div.box");
+
+$('#rankings').on('click', function () {
+    var rankOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("h1").text() < $(b).find("h1").text();
+    });
+    $("#container").html(rankOrderedDivs);
+});
+$('#rankings').on('dblclick', function () {
+    var rankOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("h1").text() > $(b).find("h1").text();
+    });
+    $("#container").html(rankOrderedDivs);
+});
+
+$('#releaseDate').on('click', function () {
+    var releaseOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("h2").text() > $(b).find("h2").text();
+    });
+    $("#container").html(releaseOrderedDivs);
+});
+$('#releaseDate').on('dblclick', function () {
+    var releaseOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("h2").text() < $(b).find("h2").text();
+    });
+    $("#container").html(releaseOrderedDivs);
+});
+
+$('#alpha').on('click', function () {
+    var alphaOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("h3").text() > $(b).find("h3").text();
+    });
+    $("#container").html(alphaOrderedDivs);
+});
+$('#alpha').on('dblclick', function () {
+    var alphaOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("h3").text() < $(b).find("h3").text();
+    });
+    $("#container").html(alphaOrderedDivs);
+});
+</script>
+
